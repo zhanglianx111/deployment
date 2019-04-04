@@ -1,0 +1,49 @@
+{
+"kind": "Pod",
+"apiVersion": "v1",
+"metadata": {
+"name": "debug",
+"creationTimestamp": null,
+"labels": {
+  "name": "debug"
+}
+},
+"spec": {
+"containers": [
+  {
+    "name": "debug",
+    "image": "bjdhub.haihangyun.com/library/debug:latest",
+    "ports": [
+      {
+        "containerPort": 8080,
+        "protocol": "TCP"
+      }
+    ],
+    "resources": {},
+    "volumeMounts": [
+      {
+        "name":"tmp",
+        "mountPath":"/tmp"
+      }
+    ],
+    "terminationMessagePath": "/dev/termination-log",
+    "imagePullPolicy": "IfNotPresent",
+    "capabilities": {},
+    "securityContext": {
+      "capabilities": {},
+      "privileged": false
+    }
+  }
+],
+"volumes": [
+  {
+    "name":"tmp",
+    "emptyDir": {}
+  }
+],
+"restartPolicy": "Always",
+"dnsPolicy": "ClusterFirst",
+"serviceAccount": ""
+},
+"status": {}
+}
