@@ -2,14 +2,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: debug-ui
-  namespace: debug
+  name: debug
+  namespace: default
 spec:
   rules:
-  - host: ui.debug.com
+  - host: debug.test.com
     http:
       paths:
       - path: /
         backend:
-          serviceName: svc-debug
+          serviceName: debug
           servicePort: 8000
